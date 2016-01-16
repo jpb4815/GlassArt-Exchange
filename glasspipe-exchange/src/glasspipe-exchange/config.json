@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "glasspipe_exchange"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-glasspipe_exchange-9a822894-56ab-4983-a660-0eb888afd01e;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
