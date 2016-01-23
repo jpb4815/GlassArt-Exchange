@@ -9,7 +9,7 @@ namespace GPE.Repository
     public interface IRepository<T>: IDisposable
     {
         IEnumerable<T> GetList();
-        T Get(int id);
+        T GetItem(int id);
         void Insert(T item);
         void Delete(int id);
         void Update(T item);
