@@ -5,16 +5,16 @@ using System.Linq.Expressions;
 
 namespace GPE.Repository
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        void Delete(T entityToDelete);
+        void Delete(TEntity entityToDelete);
         void Delete(object id);
 
-        IEnumerable<T> Get(Expression<Func<T, bool>> filter = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "");
+        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "");
 
-        T GetByID(object id);
-        void Insert(T entity);
-        void Update(T entityToUpdate);
+        TEntity GetByID(object id);
+        void Insert(TEntity entity);
+        void Update(TEntity entityToUpdate);
     }
 }
