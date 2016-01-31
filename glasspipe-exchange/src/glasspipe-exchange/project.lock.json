@@ -3,6 +3,22 @@
   "version": -9996,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "Antlr/3.4.1.9004": {
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "ClearScript.V8/5.4.4": {
+        "compile": {
+          "lib/net40/ClearScript.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ClearScript.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-beta5": {
         "dependencies": {
           "EntityFramework.Relational.Design": "7.0.0-beta5",
@@ -130,6 +146,60 @@
         },
         "runtime": {
           "lib/net45/System.Interactive.Async.dll": {}
+        }
+      },
+      "JavaScriptEngineSwitcher.Core/1.2.4": {
+        "compile": {
+          "lib/net40/JavaScriptEngineSwitcher.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net40/JavaScriptEngineSwitcher.Core.dll": {}
+        },
+        "resource": {
+          "lib/net40/ru-ru/JavaScriptEngineSwitcher.Core.resources.dll": {
+            "locale": "ru-ru"
+          }
+        }
+      },
+      "JavaScriptEngineSwitcher.Msie/1.4.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4",
+          "MsieJavaScriptEngine": "1.6.0"
+        },
+        "compile": {
+          "lib/net40/JavaScriptEngineSwitcher.Msie.dll": {}
+        },
+        "runtime": {
+          "lib/net40/JavaScriptEngineSwitcher.Msie.dll": {}
+        }
+      },
+      "JavaScriptEngineSwitcher.V8/1.4.1": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4"
+        },
+        "compile": {
+          "lib/net40/ClearScript.dll": {},
+          "lib/net40/JavaScriptEngineSwitcher.V8.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ClearScript.dll": {},
+          "lib/net40/JavaScriptEngineSwitcher.V8.dll": {}
+        },
+        "resource": {
+          "lib/net40/ru-ru/JavaScriptEngineSwitcher.V8.resources.dll": {
+            "locale": "ru-ru"
+          }
+        }
+      },
+      "JSPool/0.3.1": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4"
+        },
+        "compile": {
+          "lib/net40-Client/JSPool.dll": {}
+        },
+        "runtime": {
+          "lib/net40-Client/JSPool.dll": {}
         }
       },
       "Microsoft.AspNet.Authentication/1.0.0-beta5": {
@@ -1001,6 +1071,18 @@
           "lib/dnx451/Microsoft.AspNet.Tooling.Razor.dll": {}
         }
       },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebUtilities/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5"
@@ -1518,12 +1600,64 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Microsoft.Web.Infrastructure/1.0.0.0": {
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "MsieJavaScriptEngine/1.6.0": {
+        "compile": {
+          "lib/net40/MsieJavaScriptEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net40/MsieJavaScriptEngine.dll": {}
+        },
+        "resource": {
+          "lib/net40/ru-ru/MsieJavaScriptEngine.resources.dll": {
+            "locale": "ru-ru"
+          }
+        }
+      },
+      "Newtonsoft.Json/6.0.8": {
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "React.Core/2.2.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Msie": "1.4.0",
+          "JavaScriptEngineSwitcher.V8": "1.4.1",
+          "JSPool": "0.3.1",
+          "Newtonsoft.Json": "6.0.8"
+        },
+        "compile": {
+          "lib/net40/React.Core.dll": {},
+          "lib/net40/VroomJs.dll": {}
+        },
+        "runtime": {
+          "lib/net40/React.Core.dll": {},
+          "lib/net40/VroomJs.dll": {}
+        }
+      },
+      "react.js/0.13.1": {},
+      "React.Web/2.2.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4",
+          "Newtonsoft.Json": "6.0.8",
+          "WebActivatorEx": "2.1.0",
+          "React.Core": "2.2.0"
+        },
+        "compile": {
+          "lib/net40/React.Web.dll": {}
+        },
+        "runtime": {
+          "lib/net40/React.Web.dll": {}
         }
       },
       "Remotion.Linq/2.0.0-alpha-002": {
@@ -1552,9 +1686,47 @@
         "runtime": {
           "lib/portable-net45+win8/System.Reflection.Metadata.dll": {}
         }
+      },
+      "System.Web.Optimization.React/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "1.1.3",
+          "React.Web": "2.2.0",
+          "React.Core": "2.2.0"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.React.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.React.dll": {}
+        }
+      },
+      "WebActivatorEx/2.1.0": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
+        }
+      },
+      "WebGrease/1.5.2": {
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
       }
     },
     "DNXCore,Version=v5.0": {
+      "Antlr/3.4.1.9004": {},
+      "ClearScript.V8/5.4.4": {},
       "EntityFramework.Commands/7.0.0-beta5": {
         "dependencies": {
           "EntityFramework.Relational.Design": "7.0.0-beta5",
@@ -1651,6 +1823,23 @@
         },
         "runtime": {
           "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Interactive.Async.dll": {}
+        }
+      },
+      "JavaScriptEngineSwitcher.Core/1.2.4": {},
+      "JavaScriptEngineSwitcher.Msie/1.4.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4",
+          "MsieJavaScriptEngine": "1.6.0"
+        }
+      },
+      "JavaScriptEngineSwitcher.V8/1.4.1": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4"
+        }
+      },
+      "JSPool/0.3.1": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4"
         }
       },
       "Microsoft.AspNet.Authentication/1.0.0-beta5": {
@@ -2419,6 +2608,12 @@
           "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.dll": {}
         }
       },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        }
+      },
       "Microsoft.AspNet.WebUtilities/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.Framework.WebEncoders.Core": "1.0.0-beta5",
@@ -2919,6 +3114,7 @@
           "lib/dnxcore50/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
+      "Microsoft.Web.Infrastructure/1.0.0.0": {},
       "Microsoft.Win32.Primitives/4.0.0-beta-23019": {
         "dependencies": {
           "System.Runtime": "4.0.20-beta-23019",
@@ -2948,12 +3144,30 @@
           "lib/DNXCore50/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "MsieJavaScriptEngine/1.6.0": {},
+      "Newtonsoft.Json/6.0.8": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "React.Core/2.2.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Msie": "1.4.0",
+          "JavaScriptEngineSwitcher.V8": "1.4.1",
+          "JSPool": "0.3.1",
+          "Newtonsoft.Json": "6.0.8"
+        }
+      },
+      "react.js/0.13.1": {},
+      "React.Web/2.2.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "1.2.4",
+          "Newtonsoft.Json": "6.0.8",
+          "WebActivatorEx": "2.1.0",
+          "React.Core": "2.2.0"
         }
       },
       "Remotion.Linq/2.0.0-alpha-002": {
@@ -4136,6 +4350,13 @@
           "lib/DNXCore50/System.Threading.Timer.dll": {}
         }
       },
+      "System.Web.Optimization.React/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "1.1.3",
+          "React.Web": "2.2.0",
+          "React.Core": "2.2.0"
+        }
+      },
       "System.Xml.ReaderWriter/4.0.10-beta-23019": {
         "dependencies": {
           "System.Runtime": "4.0.20-beta-23019",
@@ -4180,10 +4401,51 @@
         "runtime": {
           "lib/dotnet/System.Xml.XDocument.dll": {}
         }
+      },
+      "WebActivatorEx/2.1.0": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0.0"
+        }
+      },
+      "WebGrease/1.5.2": {
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        }
       }
     }
   },
   "libraries": {
+    "Antlr/3.4.1.9004": {
+      "sha512": "c1S+HBE+KYA5EBxtn25LEK02hHPH/tDQ6RviUTTCJpZIPoputtn8ArsQJy9lVJWZOnw37ufByO2Fmf1M8wpr8Q==",
+      "files": [
+        "Antlr.3.4.1.9004.nupkg",
+        "Antlr.3.4.1.9004.nupkg.sha512",
+        "Antlr.nuspec",
+        "lib/Antlr3.Runtime.dll",
+        "lib/Antlr3.Runtime.pdb"
+      ]
+    },
+    "ClearScript.V8/5.4.4": {
+      "sha512": "y2NQ0lDJa5LTV/DBdWCwAHcyNWsf+SwlqBGq4SF2O6pfpEXZwcg3vzUb73SFPlJ4OLCoPhJuke9G6uD/cXWq/w==",
+      "files": [
+        "ClearScript.V8.5.4.4.nupkg",
+        "ClearScript.V8.5.4.4.nupkg.sha512",
+        "ClearScript.V8.nuspec",
+        "content/Licenses/ClearScript.main.license",
+        "content/Licenses/v8.main.license",
+        "content/Licenses/v8.strongtalk.license",
+        "content/Licenses/v8.v8.license",
+        "content/Licenses/v8.valgrind.license",
+        "lib/net40/ClearScript.dll",
+        "tools/install.ps1",
+        "tools/PostBuildCmd.ps1",
+        "tools/native/amd64/ClearScriptV8-64.dll",
+        "tools/native/amd64/v8-x64.dll",
+        "tools/native/x86/ClearScriptV8-32.dll",
+        "tools/native/x86/v8-ia32.dll"
+      ]
+    },
     "EntityFramework.Commands/7.0.0-beta5": {
       "serviceable": true,
       "sha512": "TFfcJ6hVXY5XleybC/zAgcudMZXdHo34AjqRPdZLLH1RoCFZdqvGWLiE04tKKgJ0Mh8LcOgrzHLzKikpXBZ31A==",
@@ -4281,6 +4543,65 @@
         "lib/net45/System.Interactive.Async.XML",
         "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Interactive.Async.dll",
         "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/System.Interactive.Async.XML"
+      ]
+    },
+    "JavaScriptEngineSwitcher.Core/1.2.4": {
+      "sha512": "Ml0C9FDh+PuZItK9PbnOmPx4L8fkvqoewUkQ9S8x4F+mMLr0+nNi/AWsO49qKqdtcgJzt+9Uigz5eU0wnYkEuQ==",
+      "files": [
+        "JavaScriptEngineSwitcher.Core.1.2.4.nupkg",
+        "JavaScriptEngineSwitcher.Core.1.2.4.nupkg.sha512",
+        "JavaScriptEngineSwitcher.Core.nuspec",
+        "readme.txt",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/JavaScriptEngineSwitcher.Core.dll",
+        "lib/net40/ru-ru/JavaScriptEngineSwitcher.Core.resources.dll"
+      ]
+    },
+    "JavaScriptEngineSwitcher.Msie/1.4.0": {
+      "sha512": "hDRy/5kuhnQu7FaSpmzvwZRxjBO4PXFrddMX8VqiYkodMwqQ5TURWmMRjsibh76WWXgiSjI+YiBvZDuXaVwWAg==",
+      "files": [
+        "JavaScriptEngineSwitcher.Msie.1.4.0.nupkg",
+        "JavaScriptEngineSwitcher.Msie.1.4.0.nupkg.sha512",
+        "JavaScriptEngineSwitcher.Msie.nuspec",
+        "msie-javascript-engine-license.txt",
+        "readme.txt",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/JavaScriptEngineSwitcher.Msie.dll"
+      ]
+    },
+    "JavaScriptEngineSwitcher.V8/1.4.1": {
+      "sha512": "dl4+0o9VSd/Z+ibSRxeRKUjhaFtprbslxQhc4c7FWMdq34xaFn/u6rgcLgHUiaZH3VGSbVcRtU87Vs21ytkncQ==",
+      "files": [
+        "clearscript-license.txt",
+        "JavaScriptEngineSwitcher.V8.1.4.1.nupkg",
+        "JavaScriptEngineSwitcher.V8.1.4.1.nupkg.sha512",
+        "JavaScriptEngineSwitcher.V8.nuspec",
+        "readme.txt",
+        "v8-license.txt",
+        "build/JavaScriptEngineSwitcher.V8.props",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "content/ClearScript.V8/ClearScriptV8-32.dll",
+        "content/ClearScript.V8/ClearScriptV8-64.dll",
+        "content/ClearScript.V8/v8-ia32.dll",
+        "content/ClearScript.V8/v8-x64.dll",
+        "lib/net40/ClearScript.dll",
+        "lib/net40/JavaScriptEngineSwitcher.V8.dll",
+        "lib/net40/ru-ru/JavaScriptEngineSwitcher.V8.resources.dll",
+        "tools/Install.ps1",
+        "tools/Uninstall.ps1"
+      ]
+    },
+    "JSPool/0.3.1": {
+      "sha512": "Bzq/Ote6JvBqYtZVzTPvgGQZ8NGWwNRnRVLkOvksf4ngU2D57BOhSrimYAC4BXJeKBJRl1S1jAmqj2SKExDypg==",
+      "files": [
+        "JSPool.0.3.1.nupkg",
+        "JSPool.0.3.1.nupkg.sha512",
+        "JSPool.nuspec",
+        "lib/net40-Client/JSPool.dll",
+        "lib/net40-Client/JSPool.XML"
       ]
     },
     "Microsoft.AspNet.Authentication/1.0.0-beta5": {
@@ -4904,6 +5225,16 @@
         "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.xml"
       ]
     },
+    "Microsoft.AspNet.Web.Optimization/1.1.3": {
+      "sha512": "TWKKpTWEdB8jXp2Vl2TXNKW30GBQg6nnh0y8iZWmGY5c1XY4f649vfDslNHsCsvk9JZxc1Rkm/UGDdfq4gjWRQ==",
+      "files": [
+        "Microsoft.AspNet.Web.Optimization.1.1.3.nupkg",
+        "Microsoft.AspNet.Web.Optimization.1.1.3.nupkg.sha512",
+        "Microsoft.AspNet.Web.Optimization.nuspec",
+        "lib/net40/System.Web.Optimization.dll",
+        "lib/net40/system.web.optimization.xml"
+      ]
+    },
     "Microsoft.AspNet.WebUtilities/1.0.0-beta5": {
       "serviceable": true,
       "sha512": "Ieb9JeaI57V2HRWyFsQE+Ioo7jRE7gp8QgmHAgCuc58RfUUvKf3BdmjMMqw+0DfOQMf4VL9xWpj0yQ/bMA1VDA==",
@@ -5374,6 +5705,15 @@
         "lib/dnxcore50/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll"
       ]
     },
+    "Microsoft.Web.Infrastructure/1.0.0.0": {
+      "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "files": [
+        "Microsoft.Web.Infrastructure.1.0.0.0.nupkg",
+        "Microsoft.Web.Infrastructure.1.0.0.0.nupkg.sha512",
+        "Microsoft.Web.Infrastructure.nuspec",
+        "lib/net40/Microsoft.Web.Infrastructure.dll"
+      ]
+    },
     "Microsoft.Win32.Primitives/4.0.0-beta-23019": {
       "sha512": "n7NHaku+ETTbNtkUd27NYl/BzW1luYsciL3UDt3PwoPI0s7JrV8fTRQlZ0N5o57j34e5lMV8GvT+li+6LRuO9g==",
       "files": [
@@ -5398,11 +5738,25 @@
         "ref/net46/Microsoft.Win32.Registry.dll"
       ]
     },
-    "Newtonsoft.Json/6.0.6": {
-      "sha512": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
+    "MsieJavaScriptEngine/1.6.0": {
+      "sha512": "nvtXQfLI9ssZOwTnPg5BZ6R+G5Dvpi6QAzU79E5ljEXGwC/9AB2nrqxAsRhI0lmMLuqEuIRar0Fi81uVEzLmUA==",
       "files": [
-        "Newtonsoft.Json.6.0.6.nupkg",
-        "Newtonsoft.Json.6.0.6.nupkg.sha512",
+        "chakra-host-license.txt",
+        "microsoft-ajax-minifier-license.txt",
+        "MsieJavaScriptEngine.1.6.0.nupkg",
+        "MsieJavaScriptEngine.1.6.0.nupkg.sha512",
+        "MsieJavaScriptEngine.nuspec",
+        "readme.txt",
+        "sass-and-coffee-license.txt",
+        "lib/net40/MsieJavaScriptEngine.dll",
+        "lib/net40/ru-ru/MsieJavaScriptEngine.resources.dll"
+      ]
+    },
+    "Newtonsoft.Json/6.0.8": {
+      "sha512": "7ut47NDedTW19EbL0JpFDYUP62fcuz27hJrehCDNajdCS5NtqL+E39+7Um3OkNc2wl2ym7K8Ln5eNuLus6mVGQ==",
+      "files": [
+        "Newtonsoft.Json.6.0.8.nupkg",
+        "Newtonsoft.Json.6.0.8.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -5419,6 +5773,45 @@
         "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "React.Core/2.2.0": {
+      "sha512": "J8KaQsrAsaJk0/ny3wSNKhfLB8TlDcuEB/0e0ELchhGtl3MYY19EqIOlXevB9PgBqzENKccVxBZXwE4xH5ljgQ==",
+      "files": [
+        "React.Core.2.2.0.nupkg",
+        "React.Core.2.2.0.nupkg.sha512",
+        "React.Core.nuspec",
+        "content/gulpfile.js",
+        "content/Resources/babel.js",
+        "content/Resources/react.js",
+        "lib/net40/React.Core.dll",
+        "lib/net40/React.Core.xml",
+        "lib/net40/VroomJs.dll"
+      ]
+    },
+    "react.js/0.13.1": {
+      "sha512": "4ZmGwo6UkSHidWQLd/OTWdX2HVO58hIkBur/vKpSVSXsFyURVAQ+fZZp2UlDeuu9K+0nThA3wfWjUD/Kpc8MBQ==",
+      "files": [
+        "react.js.0.13.1.nupkg",
+        "react.js.0.13.1.nupkg.sha512",
+        "react.js.nuspec",
+        "Content/Scripts/react/JSXTransformer-0.13.1.js",
+        "Content/Scripts/react/react-0.13.1.js",
+        "Content/Scripts/react/react-0.13.1.min.js",
+        "Content/Scripts/react/react-with-addons-0.13.1.js",
+        "Content/Scripts/react/react-with-addons-0.13.1.min.js"
+      ]
+    },
+    "React.Web/2.2.0": {
+      "sha512": "+UtTZ0jMYBQpyhIkYCe7Dz1WSVcHkSZHRmBATDNVXYpaJhBzDC3231PZ7dW/xGO1wV2f1D63GxsjENNHYN1gXw==",
+      "files": [
+        "React.Web.2.2.0.nupkg",
+        "React.Web.2.2.0.nupkg.sha512",
+        "React.Web.nuspec",
+        "Content/web.config.transform",
+        "Content/App_Start/ReactConfig.cs.pp",
+        "lib/net40/React.Web.dll",
+        "lib/net40/React.Web.XML"
       ]
     },
     "Remotion.Linq/2.0.0-alpha-002": {
@@ -6444,6 +6837,18 @@
         "runtimes/win8-aot/lib/netcore50/System.Threading.Timer.dll"
       ]
     },
+    "System.Web.Optimization.React/2.2.0": {
+      "sha512": "CougnwqqgMJRPX5Jc6PqjWCvEGfpwPJYP8mcyMcJsJyh1KXQ/wtc1jf7UaJm0vOt1+uMVa5RuHVijyxJtyYZDQ==",
+      "files": [
+        "readme.txt",
+        "System.Web.Optimization.React.2.2.0.nupkg",
+        "System.Web.Optimization.React.2.2.0.nupkg.sha512",
+        "System.Web.Optimization.React.nuspec",
+        "content/readme.txt",
+        "lib/net40/System.Web.Optimization.React.dll",
+        "lib/net40/System.Web.Optimization.React.XML"
+      ]
+    },
     "System.Xml.ReaderWriter/4.0.10-beta-23019": {
       "sha512": "5Xcofhb4yCBW/a0CFrcMId3MqVslXUYERvacUA1jioTuq3HfSeiPFiFhhvRUpy1poBBdh6BklQx2b5XYIeidwQ==",
       "files": [
@@ -6466,6 +6871,27 @@
         "lib/net46/_._",
         "ref/dotnet/System.Xml.XDocument.dll",
         "ref/net46/_._"
+      ]
+    },
+    "WebActivatorEx/2.1.0": {
+      "sha512": "0HJ6DpxcTzSGIgcN6Q0jKAwLX1bWKnbeDOvT7vFXB/e4MIrwWc+1XwzihQp0Sr91EUK2N7j5cjZ1cIvWCraeJg==",
+      "files": [
+        "WebActivatorEx.2.1.0.nupkg",
+        "WebActivatorEx.2.1.0.nupkg.sha512",
+        "WebActivatorEx.nuspec",
+        "lib/net40/WebActivatorEx.dll"
+      ]
+    },
+    "WebGrease/1.5.2": {
+      "sha512": "VoyDSOOugLx3q5IyOgEcjeYZQOqV9VWZQT57UtN4szlYhAmOcEjVfKWXbtRqBuX43pgyL9E7nMSIPoryC8Cu1Q==",
+      "files": [
+        "WebGrease.1.5.2.nupkg",
+        "WebGrease.1.5.2.nupkg.sha512",
+        "WebGrease.nuspec",
+        "lib/WebGrease.dll",
+        "tools/install.ps1",
+        "tools/uninstall.ps1",
+        "tools/WG.exe"
       ]
     }
   },
@@ -6492,7 +6918,11 @@
       "Microsoft.Framework.Configuration.UserSecrets >= 1.0.0-beta5",
       "Microsoft.Framework.Logging >= 1.0.0-beta5",
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta5",
-      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta5"
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-beta5",
+      "react.js >= 0.13.1",
+      "System.Web.Optimization.React >= 2.2.0",
+      "React.Web >= 2.2.0",
+      "ClearScript.V8 >= 5.4.4"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []

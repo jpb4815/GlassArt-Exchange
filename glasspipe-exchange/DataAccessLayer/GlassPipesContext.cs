@@ -5,9 +5,9 @@ namespace DataAccessLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class GlassPipesModel : DbContext
+    public partial class GlassPipesContext : DbContext
     {
-        public GlassPipesModel()
+        public GlassPipesContext()
             : base("name=GlassPipesExchangeModel")
         {
         }
