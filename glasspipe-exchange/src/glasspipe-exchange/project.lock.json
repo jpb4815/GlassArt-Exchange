@@ -1629,6 +1629,53 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "Ninject/3.2.0.0": {
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.MVC5/3.2.1.0": {
+        "dependencies": {
+          "Ninject": "[3.2.0.0, 3.3.0.0)",
+          "Ninject.Web.Common.WebHost": "3.0.0.0"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.Web.Infrastructure"
+        ],
+        "compile": {
+          "lib/net45-full/Ninject.Web.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Web.Mvc.dll": {}
+        }
+      },
+      "Ninject.Web.Common/3.0.0.7": {
+        "dependencies": {
+          "Ninject": "[3.0.0.0, 3.1.0.0)",
+          "WebActivator": "1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.Web.Infrastructure"
+        ],
+        "compile": {
+          "lib/net45-full/Ninject.Web.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Web.Common.dll": {}
+        }
+      },
+      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
+        "dependencies": {
+          "Ninject.Web.Common": "3.0.0-unstable",
+          "WebActivator": "1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.Web.Infrastructure"
+        ]
+      },
       "React.Core/2.2.0": {
         "dependencies": {
           "JavaScriptEngineSwitcher.Msie": "1.4.0",
@@ -1698,6 +1745,17 @@
         },
         "runtime": {
           "lib/net40/System.Web.Optimization.React.dll": {}
+        }
+      },
+      "WebActivator/1.5": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivator.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivator.dll": {}
         }
       },
       "WebActivatorEx/2.1.0": {
@@ -3153,6 +3211,25 @@
           "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "Ninject/3.2.0.0": {},
+      "Ninject.MVC5/3.2.1.0": {
+        "dependencies": {
+          "Ninject": "[3.2.0.0, 3.3.0.0)",
+          "Ninject.Web.Common.WebHost": "3.0.0.0"
+        }
+      },
+      "Ninject.Web.Common/3.0.0.7": {
+        "dependencies": {
+          "Ninject": "[3.0.0.0, 3.1.0.0)",
+          "WebActivator": "1.5"
+        }
+      },
+      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
+        "dependencies": {
+          "Ninject.Web.Common": "3.0.0-unstable",
+          "WebActivator": "1.5"
+        }
+      },
       "React.Core/2.2.0": {
         "dependencies": {
           "JavaScriptEngineSwitcher.Msie": "1.4.0",
@@ -4400,6 +4477,11 @@
         },
         "runtime": {
           "lib/dotnet/System.Xml.XDocument.dll": {}
+        }
+      },
+      "WebActivator/1.5": {
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0.0"
         }
       },
       "WebActivatorEx/2.1.0": {
@@ -5775,6 +5857,71 @@
         "tools/install.ps1"
       ]
     },
+    "Ninject/3.2.0.0": {
+      "sha512": "CN7i6J/a1y85jVdeg0FkH5Obqo47SVQBU5929NPmlsi/AbE6ofJoStPHJco4H3aSI696obvoDmFxbZ+tfz7m6A==",
+      "files": [
+        "Ninject.3.2.0.0.nupkg",
+        "Ninject.3.2.0.0.nupkg.sha512",
+        "Ninject.nuspec",
+        "lib/net35/Ninject.dll",
+        "lib/net35/Ninject.xml",
+        "lib/net40/Ninject.dll",
+        "lib/net40/Ninject.xml",
+        "lib/net45-full/Ninject.dll",
+        "lib/net45-full/Ninject.xml",
+        "lib/sl2/Ninject.dll",
+        "lib/sl2/Ninject.xml",
+        "lib/sl3/Ninject.dll",
+        "lib/sl3/Ninject.xml",
+        "lib/sl3-wp/Ninject.dll",
+        "lib/sl3-wp/Ninject.xml",
+        "lib/sl4/Ninject.dll",
+        "lib/sl4/Ninject.xml",
+        "lib/sl4-windowsphone71/Ninject.dll",
+        "lib/sl4-windowsphone71/Ninject.xml",
+        "lib/sl5/Ninject.dll",
+        "lib/sl5/Ninject.xml"
+      ]
+    },
+    "Ninject.MVC5/3.2.1.0": {
+      "sha512": "MfnnUF6vUzg25r8vi182dQNjkAYYWradcYs+an0iKdB+Q3uYzV0tno13K7yMXhbWBaQoUFPX8fyxYy3G6Kpp0w==",
+      "files": [
+        "Ninject.MVC5.3.2.1.0.nupkg",
+        "Ninject.MVC5.3.2.1.0.nupkg.sha512",
+        "Ninject.MVC5.nuspec",
+        "lib/net40-full/Ninject.Web.Mvc.dll",
+        "lib/net40-full/Ninject.Web.Mvc.xml",
+        "lib/net45-full/Ninject.Web.Mvc.dll",
+        "lib/net45-full/Ninject.Web.Mvc.xml"
+      ]
+    },
+    "Ninject.Web.Common/3.0.0.7": {
+      "sha512": "pTd1l0DxykX4RcNb1xO77lzp3ylvN0YmUEIDQ7UCH9jhvKEBKZGPrDLGu/s7LVLhvEMpT1Nr1cxch5EtpQL+tg==",
+      "files": [
+        "Ninject.Web.Common.3.0.0.7.nupkg",
+        "Ninject.Web.Common.3.0.0.7.nupkg.sha512",
+        "Ninject.Web.Common.nuspec",
+        "Content/App_Start/NinjectWebCommon.cs.pp",
+        "lib/net35-full/Ninject.Web.Common.dll",
+        "lib/net35-full/Ninject.Web.Common.pdb",
+        "lib/net35-full/Ninject.Web.Common.xml",
+        "lib/net40-full/Ninject.Web.Common.dll",
+        "lib/net40-full/Ninject.Web.Common.pdb",
+        "lib/net40-full/Ninject.Web.Common.xml",
+        "lib/net45-full/Ninject.Web.Common.dll",
+        "lib/net45-full/Ninject.Web.Common.pdb",
+        "lib/net45-full/Ninject.Web.Common.xml"
+      ]
+    },
+    "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
+      "sha512": "vjhWtyuOcf4E66xqhdxm5Eg4/raBJ1kaJ30nouOCsmxYgUaNKZkMEU1PMSmDm5L+PqzyLJQV61YRTocDY9XkaA==",
+      "files": [
+        "Ninject.Web.Common.WebHost.3.0.2-unstable-0.nupkg",
+        "Ninject.Web.Common.WebHost.3.0.2-unstable-0.nupkg.sha512",
+        "Ninject.Web.Common.WebHost.nuspec",
+        "Content/App_Start/NinjectWebCommon.cs.pp"
+      ]
+    },
     "React.Core/2.2.0": {
       "sha512": "J8KaQsrAsaJk0/ny3wSNKhfLB8TlDcuEB/0e0ELchhGtl3MYY19EqIOlXevB9PgBqzENKccVxBZXwE4xH5ljgQ==",
       "files": [
@@ -6873,6 +7020,15 @@
         "ref/net46/_._"
       ]
     },
+    "WebActivator/1.5": {
+      "sha512": "nldyuFfAUyWmqeY5gtbJm/lfDGKm8rFd+sv72eGTrrBL1nZdOWAaYiiNOH8dU/ShGxK/U53TGmzTHaadgY+W3w==",
+      "files": [
+        "WebActivator.1.5.nupkg",
+        "WebActivator.1.5.nupkg.sha512",
+        "WebActivator.nuspec",
+        "lib/net40/WebActivator.dll"
+      ]
+    },
     "WebActivatorEx/2.1.0": {
       "sha512": "0HJ6DpxcTzSGIgcN6Q0jKAwLX1bWKnbeDOvT7vFXB/e4MIrwWc+1XwzihQp0Sr91EUK2N7j5cjZ1cIvWCraeJg==",
       "files": [
@@ -6922,7 +7078,8 @@
       "react.js >= 0.13.1",
       "System.Web.Optimization.React >= 2.2.0",
       "React.Web >= 2.2.0",
-      "ClearScript.V8 >= 5.4.4"
+      "ClearScript.V8 >= 5.4.4",
+      "Ninject.MVC5 >= 3.2.1"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []

@@ -29,7 +29,8 @@
         "react.js": "0.13.1",
         "System.Web.Optimization.React": "2.2.0",
         "React.Web": "2.2.0",
-        "ClearScript.V8": "5.4.4"
+        "ClearScript.V8": "5.4.4",
+        "Ninject.MVC5": "3.2.1"
     },
 
     "commands": {
