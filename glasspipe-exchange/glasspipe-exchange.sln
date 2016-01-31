@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassPipesTests", "GlassPipesTests\GlassPipesTests.csproj", "{8942E262-B54D-4A3C-935C-E265B1DCCDD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPEWeb", "GPEWeb\GPEWeb.csproj", "{273D9327-2A10-4769-B797-3384BAC6FC1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{8942E262-B54D-4A3C-935C-E265B1DCCDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8942E262-B54D-4A3C-935C-E265B1DCCDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8942E262-B54D-4A3C-935C-E265B1DCCDD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273D9327-2A10-4769-B797-3384BAC6FC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273D9327-2A10-4769-B797-3384BAC6FC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273D9327-2A10-4769-B797-3384BAC6FC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273D9327-2A10-4769-B797-3384BAC6FC1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
