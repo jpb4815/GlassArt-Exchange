@@ -1,6 +1,51 @@
-﻿body {
+﻿/*Site.css*/
+/*Main styles-----------------------------------------*/
+
+body {
+    background: #efefef;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Georgia, serif;
+}
+
+/* Footer ---------------------------------------------*/
+footer {
     padding-top: 50px;
-    padding-bottom: 20px;
+}
+
+/* Header ----------------------------------------------*/
+#main-nav {
+    background: #FFF;
+    background-image: none;
+    border: none;
+}
+
+/*  Logo   */
+#main-nav .navbar-brand     {
+    color:#f45800;
+    font-size:30px;
+    padding-top:20px;
+    padding-bottom:20px;
+    font-family:Georgia, serif;
+}
+
+/* nav links  */
+#main-nav a {
+    font-size: 18px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+/* Hover */
+#main-nav a:hover {
+    background: none;
+}
+
+/* Header search form */
+#main-nav .navbar-form {
+    padding-top: 16px;
+    padding-bottom: 10px;  
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +66,8 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+a[ui-sref] {
+    cursor: pointer;
 }
